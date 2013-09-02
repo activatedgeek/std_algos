@@ -3,10 +3,9 @@
 using namespace std;
 
 class bignum{
-private:
-	string s;
 public:
-	bignum(){}
+	string s;
+	bignum(){this->s="0";}
 	bignum(string s){
 		this->s = s;
 	}
@@ -103,12 +102,39 @@ public:
 		}
 		return bignum(res);
 	}
-	bignum operator=(bignum& in){
-		string res=in.s;
-		return bignum(res);
+	bignum operator=(const bignum& in){
+		return bignum(in.s);
 	}
-	bignum operator*(bignum& in){
-		string res="";
-		return bignum(res);
+	bignum operator*(const bignum& in){
+		bignum res;
+		string curlayer;
+		int l=s.length(),m=in.s.length(),temp,carry;
+		for(int i=l-1;i>=0;i--){
+			carry=0;
+			curlayer="";
+			for(int j=m-1;j>=0;j--){
+				temp = carry + (in.s[j]-'0')*(s[i]-'0');
+				curlayer+= char(int('0') + temp%10);
+				carry = temp/10;
+			}
+			int len = curlayer.length();
+			for(int k=0;k<len/2;k++){
+				char temp = curlayer[k];
+				curlayer[k] = curlayer[len-k-1];
+				curlayer[len-k-1] = temp;
+			}
+			if(carry!=0){
+				while(carry){
+					curlayer = char(int('0') + carry%10) + curlayer;
+					carry/=10;
+				}
+			}
+			int c=l-1-i;
+			while(c--)
+				curlayer+="0";
+			bignum layer(curlayer);  //some issues here donot know why!
+			cout<<layer<<"\n";
+		}
+		return res;
 	}
 };
