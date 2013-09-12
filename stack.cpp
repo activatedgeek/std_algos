@@ -65,6 +65,9 @@ public:
 	StackLL(){
 		top = NULL;
 	}
+	~StackLL(){
+		delete top;
+	}
 	bool Push(int val){
 		if(top==NULL){
 			Object *start = new Object;
