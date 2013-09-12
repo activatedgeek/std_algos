@@ -1,10 +1,12 @@
 /*******Stack using array, constant amortized complexity for push operations***********/
 class Stack{
-int *arr,head,size;
+private:
+	int *arr,head,size;
+	friend class Queue;
 public:
 	Stack(){
 		head=-1;
-		size=3;
+		size=10;
 		arr=new int[size];
 	}
 	~Stack(){
@@ -33,9 +35,8 @@ public:
 		return true;
 	}
 	int Pop(){
-		if(head!=-1){
+		if(head!=-1)
 			return arr[head--];
-		}
 		cout<<"Stack Underflow!";
 		return 0;
 	}
@@ -50,6 +51,39 @@ public:
 	}
 };
 /*******Stack using array, constant amortized complexity for push operations***********/
+
+/*******Queue using two Stacks********/
+class Queue{
+private:
+	Stack left,right;
+public:
+	bool Enqueue(int val){
+		left.Push(val);
+	}
+	int Dequeue(){
+		if(right.head!=-1)
+			return right.Pop();
+		else{
+			while(left.head!=-1)
+				right.Push(left.Pop());
+		}
+		return right.Pop();
+	}
+	bool IsEmpty(){
+		return ((left.head==-1) && (right.head==-1));
+	}
+	int Front(){
+		if(right.head!=-1)
+			return right.Pop();
+		else{
+			while(left.head!=-1)
+				right.Push(left.Pop());
+		}
+		return right.Top();
+	}
+};
+
+/*******Queue using two Stacks********/
 
 /*******Stack using linked list, constant time operations************/
 class Object{
