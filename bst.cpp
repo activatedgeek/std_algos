@@ -283,6 +283,5 @@ int main(){
 	for (int i = 0; i < 10; ++i)
 		T.insert(new TreeNode(rand() % 100 + 1));
 	T.inOrderWalk(T.root);
-	_getch();
 	return 0;
 }
