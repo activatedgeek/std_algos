@@ -121,7 +121,7 @@ bool check_n_n_n(bool *prime_set1,bool *prime_set2,bool *prime_set3,long long k,
 }
 
 int main(){
-	long long n=(long long)1500;
+	long long n=(long long)1e6;
 	bool primes_set1[n],primes_set2[n],primes_set3[n];
 
 	//for max upto 1e6
