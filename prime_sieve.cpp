@@ -127,10 +127,10 @@ int main(){
 	//for max upto 1e6
 	//sieve_n(primes_set1,n);
 
-	//for max upto 1e12
+	//for max upto 2*1e6
 	//sieve_n_n(primes_set1,primes_set2,n);
 
-	//for max upto 1e18
+	//for max upto 3*1e6
 	//sieve_n_n_n(primes_set1,primes_set2,primes_set3,n);
 	return 0;
 }
