@@ -1,5 +1,3 @@
-//Longest increasig subsequence
-
 //Longest non-decreasing subsequence using Dynamic Programming
 #include <iostream>
 #include <vector>
@@ -12,7 +10,7 @@ int LIS(int* seq,int n){
 	//solution[i] stores the LIS uptil that point
 	for(int i=0;i<n;++i){
 		for(int j=0;j<i;++j){
-			if(seq[j]<seq[i] && solution[i]<solution[j]+1)
+			if(seq[j]<=seq[i] && solution[i]<solution[j]+1)
 				solution[i]=solution[j]+1;
 		}
 	}
