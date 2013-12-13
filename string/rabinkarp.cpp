@@ -7,10 +7,11 @@ using namespace std;
 #define d 256             //range of characters
 #define PRIME 104729      //choose a good/large prime for least collisions
 
-void rabinkarp(string& text,string& pattern,int prime,vector<int>& pos){
+vector<int> rabinkarp(string& text,string& pattern,int prime){
+	vector<int> pos;
 	int m=pattern.length(),n = text.length();
 	if(m>n)
-		return;
+		return pos;
 	int phash=0;          	
 	int thash=0;
 	int h=1;
@@ -44,6 +45,7 @@ void rabinkarp(string& text,string& pattern,int prime,vector<int>& pos){
 				thash += prime;
 		}
 	}
+	return pos;
 }
 
 int main(){
@@ -51,8 +53,7 @@ int main(){
 	string pattern;
 	getline(cin,text);
 	getline(cin,pattern);
-	vector<int> pos;
-	rabinkarp(text,pattern,PRIME,pos);
+	vector<int> pos = rabinkarp(text,pattern,PRIME);
 	for(int i=0;i<pos.size();++i)
 		cout<<pos[i]<<" ";
 	cout<<endl;
