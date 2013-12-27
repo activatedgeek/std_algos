@@ -1,8 +1,11 @@
 #include <iostream>
+#include <algorithm>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sstream>
 #include <math.h>
+#include <time.h>
 #include <vector>
 #include <utility>
 #include <list>
