@@ -10,8 +10,8 @@ bool subsetsum(int *arr,int n,int sum){
 	for(int i=1;i<sum+1;++i)
 		subset[i][0] = false;
 
-	for(int cursum=1;cursum<sum+1;++cursum){
-		for(int count=1;count<n+1;++count){
+	for(int cursum=1;cursum<=sum;++cursum){
+		for(int count=1;count<=n;++count){
 			subset[cursum][count] = subset[cursum][count-1]; //if sum is possible with lesser elements then with more elements also
 			
 			//check if different counts of subsets can give us a smaller sum
@@ -19,8 +19,8 @@ bool subsetsum(int *arr,int n,int sum){
 				subset[cursum][count] = subset[cursum][count] || subset[cursum-arr[count-1]][count-1];
 		}
 	}
-	string s = (subset[sum][n]==true) ? "Yes\n" : "No\n";
-	cout<<s;
+	//string s = (subset[sum][n]==true) ? "Yes\n" : "No\n";
+	//cout<<s;
 	return subset[sum][n];
 }
 

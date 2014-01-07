@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 #include <sstream>
 #include <math.h>
 #include <time.h>
@@ -13,14 +14,13 @@
 #include <queue>
 using namespace std;
 
+//limits
 #define LIM INT_MAX
 
 //iterations
 #define repi(i,a,b) for(int i=a;i<=b;++i)
 #define repd(i,a,b) for(int i=a;i>=b;--i)
 
-//utility
-#define reset(arr,val,type,size) memset(arr,val,sizeof(type)*size)
 
 int main(){
 	int t;
