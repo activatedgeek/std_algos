@@ -3,19 +3,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <limits.h>
 #include <sstream>
 #include <math.h>
+#include <limits.h>
 #include <time.h>
 #include <vector>
 #include <utility>
 #include <list>
 #include <stack>
 #include <queue>
+#include <map>
 using namespace std;
 
-//limits
-#define LIM INT_MAX
+#define LIM_UI UINT_MAX
+#define LIM_UL ULLONG_MAX
 
 //iterations
 #define repi(i,a,b) for(int i=a;i<=b;++i)
