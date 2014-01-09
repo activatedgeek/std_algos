@@ -19,8 +19,6 @@ bool subsetsum(int *arr,int n,int sum){
 				subset[cursum][count] = subset[cursum][count] || subset[cursum-arr[count-1]][count-1];
 		}
 	}
-	//string s = (subset[sum][n]==true) ? "Yes\n" : "No\n";
-	//cout<<s;
 	return subset[sum][n];
 }
 
