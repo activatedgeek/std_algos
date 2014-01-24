@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <algorithm>
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,8 +24,8 @@ using namespace std;
 #define repi(i,a,b) for(int i=a;i<=b;++i)
 #define repd(i,a,b) for(int i=a;i>=b;--i)
 
-
 int main(){
+	ios::sync_with_stdio(false);
 	int t;
 	cin>>t;
 	while(t--){
