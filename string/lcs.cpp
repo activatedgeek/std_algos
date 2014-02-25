@@ -12,18 +12,18 @@ int LCS(string& s,string& t){
 				dp[i][j]=0;
 			else if(s[i-1]==t[j-1]){
 				dp[i][j] = dp[i-1][j-1] +1;
-				result = max(result,dp[i][j]);
 			}
-			else
-				dp[i][j]=0;
+			else{
+				dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
+			}
 		}
 	}
-	return result;
+	return dp[m][n];
 }
 
 int main(){
-	string s = "fft";
-	string r = "tff";
+	string s = "abcd";
+	string r = "efgab";
 	cout<<LCS(s,r);
 	return 0;
 }
