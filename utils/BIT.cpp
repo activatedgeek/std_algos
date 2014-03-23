@@ -24,7 +24,33 @@ void initTree(int *tree,int* cumu,int n){
 		update(tree,cumu[i],i,n);
 	}
 }
+
+/***********for 2D**********/
 /*
+void update(int x,int y,int change,int n){
+	while(x<=n){
+		int j=y;
+		while(j<=n){
+			tree[x][j]+=change;
+			j += (j & -j);
+		}
+		x += (x & -x);
+	}
+}
+
+int read(int x,int y){
+	int sum=0,j;
+	while(x){
+		j=y;
+		while(j){
+			sum += tree[x][j];
+			j -= (j & -j);
+		}
+		x -= (x & -x);
+	}
+	return sum;
+}
+
 int read2D(int sx,int sy,int ex,int ey){
 	int sum=0;
 	sum += read(sx,sy);
